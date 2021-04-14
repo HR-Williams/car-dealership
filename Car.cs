@@ -22,7 +22,7 @@ public class Program
     Car yugo = new Car();
     yugo.MakeModel = "1980 Yugo Koral";
     yugo.Price = 700;
-    yugo.Miles = 239001;
+    yugo.Miles = 56000;
 
     Car ford = new Car();
     ford.MakeModel = "1988 Ford Country Squire";
@@ -43,6 +43,14 @@ public class Program
     List<Car> CarsMatchingSearch = new List<Car>(0);
 
     foreach (Car automobile in Cars)
+    {
+      if (automobile.WorthBuying(maxPrice))
+      {
+        CarsMatchingSearch.Add(automobile);
+      }
+    }
+
+    foreach(Car automobile in CarsMatchingSearch)
     {
       Console.WriteLine(automobile.MakeModel);
     }
